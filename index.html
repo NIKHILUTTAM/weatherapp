@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="search-box">
+            <input type="text" placeholder="Enter city name" id="city-input">
+            <button id="search-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
+            <button id="location-btn" title="Get Current Location">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><point cx="12" cy="12" r="1"></point></svg>
+            </button>
+        </div>
+
+        <div class="unit-toggle">
+            <button id="celsius" class="active">°C</button>
+            <button id="fahrenheit">°F</button>
+        </div>
+
+        <div class="weather-box">
+            <div class="weather-details hidden" id="weather-details">
+                <div class="current-info">
+                    <div class="date-time">
+                        <h2 id="current-date">Monday, 1 January</h2>
+                        <h3 id="current-time">12:00 PM</h3>
+                    </div>
+                    <div class="weather-icon">
+                        <img src="" alt="weather icon" id="weather-icon">
+                    </div>
+                    <div class="temperature">
+                        <h1 id="temp">0°C</h1>
+                        <h3 id="feels-like">Feels like: 0°C</h3>
+                    </div>
+                    <div class="description">
+                        <h3 id="description">Clear Sky</h3>
+                        <h3 id="city">City</h3>
+                    </div>
+                </div>
+
+                <div class="details">
+                    <div class="detail-item humidity">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                        <span>Humidity</span>
+                        <h4 id="humidity">0%</h4>
+                    </div>
+                    <div class="detail-item wind">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"></path></svg>
+                        <span>Wind Speed</span>
+                        <h4 id="wind-speed">0 km/h</h4>
+                    </div>
+                    <div class="detail-item pressure">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                        <span>Pressure</span>
+                        <h4 id="pressure">0 hPa</h4>
+                    </div>
+                    <div class="detail-item visibility">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                        <span>Visibility</span>
+                        <h4 id="visibility">0 km</h4>
+                    </div>
+                </div>
+
+                <div id="weather-alert" class="weather-alert hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    <p id="alert-message"></p>
+                </div>
+
+                <div class="forecast">
+                    <h3>5-Day Forecast</h3>
+                    <div class="forecast-container" id="forecast-container">
+                        <!-- Forecast items will be added here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="error hidden" id="error-msg">
+                <h3>City not found</h3>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
